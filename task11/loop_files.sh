@@ -1,5 +1,3 @@
 #! /bin/bash
-files=$(find . -type f -name "*.md")
-for file in $files; do
-    echo >> "$file" "This is a new line"
-done
+#!/bin/bash
+find . -type f -name "*.md" -exec sh -c 'for file do echo "This is a new line" >> "$file"; done' sh {} +
